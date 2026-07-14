@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Beautiful Memories ❤️</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<audio id="bgMusic" autoplay loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<section class="hero">
+
+<h1 id="typing"></h1>
+
+<div class="card">
+
+<p>
+
+Sometimes...
+
+the most beautiful memories are created without any planning.
+
+<br><br>
+
+A simple conversation...
+
+A random smile...
+
+A small moment...
+
+They seem ordinary at first,
+
+but later they become the moments we remember the most.
+
+<br><br>
+
+Every time we talked,
+
+I found myself smiling without even realizing it.
+
+Every little conversation became something worth remembering.
+
+<br><br>
+
+Life moves forward every day,
+
+but memories stay with us forever.
+
+They remind us of people who made our lives a little happier.
+
+<br><br>
+
+You may not know it,
+
+but you've created many memories that still make me smile.
+
+Not because they were extraordinary...
+
+but because they happened with you.
+
+<br><br>
+
+Sometimes happiness doesn't come from grand gestures.
+
+Sometimes it's hidden inside the smallest moments.
+
+A message.
+
+A laugh.
+
+A smile.
+
+A simple "How are you?"
+
+<br><br>
+
+Those little things become unforgettable.
+
+<br><br>
+
+Thank you for every memory.
+
+Thank you for every smile.
+
+Thank you for being yourself.
+
+❤️
+
+</p>
+
+</div>
+
+<button class="main-btn" onclick="nextPage()">
+
+Read My Letter ❤️
+
+</button>
+
+</section>
+
+<script>
+
+const text="Every Memory Is Special ❤️";
+
+let i=0;
+
+function typeWriter(){
+
+if(i<text.length){
+
+document.getElementById("typing").innerHTML+=text.charAt(i);
+
+i++;
+
+setTimeout(typeWriter,80);
+
+}
+
+}
+
+typeWriter();
+
+const music=document.getElementById("bgMusic");
+
+document.body.addEventListener("click",()=>{
+
+music.play();
+
+},{once:true});
+
+function nextPage(){
+
+document.body.style.opacity="0";
+
+setTimeout(()=>{
+
+window.location="letter.html";
+
+},500);
+
+}
+
+function createHeart(){
+
+const heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.animationDuration=(Math.random()*3+3)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+
+heart.remove();
+
+},6000);
+
+}
+
+setInterval(createHeart,300);
+
+function createPetal(){
+
+const petal=document.createElement("div");
+
+petal.className="petal";
+
+petal.innerHTML="🌸";
+
+petal.style.left=Math.random()*100+"vw";
+
+petal.style.animationDuration=(Math.random()*5+5)+"s";
+
+document.body.appendChild(petal);
+
+setTimeout(()=>{
+
+petal.remove();
+
+},9000);
+
+}
+
+setInterval(createPetal,800);
+
+</script>
+
+</body>
+</html>

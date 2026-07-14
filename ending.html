@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Thank You ❤️</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+#fireworks{
+
+position:fixed;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+pointer-events:none;
+
+overflow:hidden;
+
+z-index:9999;
+
+}
+
+.spark{
+
+position:absolute;
+
+width:8px;
+
+height:8px;
+
+border-radius:50%;
+
+animation:explode 2s linear forwards;
+
+}
+
+@keyframes explode{
+
+0%{
+
+transform:translate(0,0) scale(1);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:
+
+translate(
+
+calc((var(--x))*1px),
+
+calc((var(--y))*1px)
+
+)
+
+scale(0);
+
+opacity:0;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<audio id="bgMusic" autoplay loop>
+
+<source src="music.mp3" type="audio/mpeg">
+
+</audio>
+
+<div id="fireworks"></div>
+
+<section class="hero">
+
+<h1 id="typing"></h1>
+
+<div class="card">
+
+<p>
+
+Thank you, Sreeja. ❤️
+
+<br><br>
+
+If you've reached this page,
+
+thank you for spending your time reading everything from beginning to end.
+
+<br><br>
+
+This little website wasn't made to impress you.
+
+It was made because I wanted to express appreciation in a creative way.
+
+<br><br>
+
+Sometimes the smallest gestures carry the biggest meaning.
+
+I hope this website made you smile,
+
+even if only for a few moments.
+
+<br><br>
+
+You deserve happiness,
+
+peace,
+
+success,
+
+and countless beautiful memories.
+
+<br><br>
+
+Never stop smiling.
+
+Never stop believing in yourself.
+
+Never forget how amazing you are.
+
+<br><br>
+
+Whatever the future brings,
+
+I sincerely wish you the very best.
+
+May your dreams come true,
+
+and may every new day bring you reasons to smile.
+
+<br><br>
+
+Thank you for being yourself.
+
+Thank you for visiting this website.
+
+❤️
+
+</p>
+
+</div>
+
+<div class="buttons">
+
+<button class="main-btn"
+
+onclick="location.href='index.html'">
+
+Replay ❤️
+
+</button>
+
+</div>
+
+</section>
+
+<script>
+
+const text="Thank You ❤️";
+
+let i=0;
+
+function typeWriter(){
+
+if(i<text.length){
+
+document.getElementById("typing").innerHTML+=text.charAt(i);
+
+i++;
+
+setTimeout(typeWriter,120);
+
+}
+
+}
+
+typeWriter();
+
+const music=document.getElementById("bgMusic");
+
+document.body.addEventListener("click",()=>{
+
+music.play();
+
+},{once:true});
+
+function createHeart(){
+
+const heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.animationDuration=(Math.random()*3+3)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+
+heart.remove();
+
+},6000);
+
+}
+
+setInterval(createHeart,300);
+
+function createPetal(){
+
+const petal=document.createElement("div");
+
+petal.className="petal";
+
+petal.innerHTML="🌸";
+
+petal.style.left=Math.random()*100+"vw";
+
+petal.style.animationDuration=(Math.random()*5+5)+"s";
+
+document.body.appendChild(petal);
+
+setTimeout(()=>{
+
+petal.remove();
+
+},9000);
+
+}
+
+setInterval(createPetal,800);
+
+function fireworks(){
+
+for(let i=0;i<180;i++){
+
+const s=document.createElement("div");
+
+s.className="spark";
+
+s.style.left="50%";
+
+s.style.top="40%";
+
+s.style.background="hsl("+Math.random()*360+",100%,60%)";
+
+s.style.setProperty("--x",(Math.random()-0.5)*900);
+
+s.style.setProperty("--y",(Math.random()-0.5)*700);
+
+document.getElementById("fireworks").appendChild(s);
+
+setTimeout(()=>{
+
+s.remove();
+
+},2000);
+
+}
+
+}
+
+setInterval(fireworks,2500);
+
+fireworks();
+
+</script>
+
+</body>
+
+</html>

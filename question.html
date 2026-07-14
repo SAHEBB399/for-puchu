@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>One Small Question ❤️</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<audio id="bgMusic" autoplay loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<section class="hero">
+
+<h1 class="title">
+Can I Ask You Something? ❤️
+</h1>
+
+<p class="subtitle">
+
+Before we continue...
+
+I have just one tiny question.
+
+<br><br>
+
+Promise me you'll answer honestly.
+
+<br><br>
+
+Don't worry...
+
+There isn't a wrong answer.
+
+😊
+
+</p>
+
+<div class="buttons">
+
+<button class="yes-btn" onclick="yesClick()">
+Yes ❤️
+</button>
+
+<button class="no-btn" id="noBtn">
+No 😅
+</button>
+
+</div>
+
+</section>
+
+<script>
+
+const music=document.getElementById("bgMusic");
+
+document.body.addEventListener("click",()=>{
+
+music.play();
+
+},{once:true});
+
+function yesClick(){
+
+document.body.style.opacity="0";
+
+setTimeout(()=>{
+
+window.location="question2.html";
+
+},500);
+
+}
+
+const noBtn=document.getElementById("noBtn");
+
+function moveButton(){
+
+const maxX=window.innerWidth-noBtn.offsetWidth-30;
+
+const maxY=window.innerHeight-noBtn.offsetHeight-30;
+
+noBtn.style.position="absolute";
+
+noBtn.style.left=Math.random()*maxX+"px";
+
+noBtn.style.top=Math.random()*maxY+"px";
+
+}
+
+noBtn.addEventListener("mouseenter",moveButton);
+
+noBtn.addEventListener("click",moveButton);
+
+function createHeart(){
+
+const heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.animationDuration=(Math.random()*3+3)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+
+heart.remove();
+
+},6000);
+
+}
+
+setInterval(createHeart,300);
+
+function createPetal(){
+
+const petal=document.createElement("div");
+
+petal.className="petal";
+
+petal.innerHTML="🌸";
+
+petal.style.left=Math.random()*100+"vw";
+
+petal.style.animationDuration=(Math.random()*5+5)+"s";
+
+document.body.appendChild(petal);
+
+setTimeout(()=>{
+
+petal.remove();
+
+},9000);
+
+}
+
+setInterval(createPetal,900);
+
+</script>
+
+</body>
+</html>

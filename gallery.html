@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Gallery ❤️</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+.lightbox{
+display:none;
+position:fixed;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.9);
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+
+.lightbox img{
+max-width:90%;
+max-height:90%;
+border-radius:20px;
+box-shadow:0 0 30px rgba(255,255,255,.4);
+animation:zoom .4s;
+}
+
+@keyframes zoom{
+from{
+transform:scale(.7);
+opacity:0;
+}
+to{
+transform:scale(1);
+opacity:1;
+}
+}
+
+.close{
+position:absolute;
+top:30px;
+right:40px;
+font-size:45px;
+color:white;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<audio id="bgMusic" autoplay loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<section class="hero">
+
+<h1 id="typing"></h1>
+
+<p class="subtitle">
+
+Every picture tells a story.
+
+Every smile holds a memory.
+
+Every memory becomes priceless with time.
+
+❤️
+
+</p>
+
+<div class="gallery">
+
+<img src="sreeja1.jpg" onclick="openImg(this.src)">
+<img src="sreeja2.jpg" onclick="openImg(this.src)">
+<img src="sreeja3.jpg" onclick="openImg(this.src)">
+<img src="sreeja4.jpg" onclick="openImg(this.src)">
+<img src="sreeja5.jpg" onclick="openImg(this.src)">
+
+</div>
+
+<br>
+
+<button class="main-btn" onclick="nextPage()">
+
+One Last Question ❤️
+
+</button>
+
+</section>
+
+<div class="lightbox" id="lightbox">
+
+<span class="close" onclick="closeImg()">&times;</span>
+
+<img id="preview">
+
+</div>
+
+<script>
+
+const text="A Few Beautiful Memories ❤️";
+
+let i=0;
+
+function typeWriter(){
+
+if(i<text.length){
+
+document.getElementById("typing").innerHTML+=text.charAt(i);
+
+i++;
+
+setTimeout(typeWriter,80);
+
+}
+
+}
+
+typeWriter();
+
+const music=document.getElementById("bgMusic");
+
+document.body.addEventListener("click",()=>{
+
+music.play();
+
+},{once:true});
+
+function nextPage(){
+
+document.body.style.opacity="0";
+
+setTimeout(()=>{
+
+window.location="finalquestion.html";
+
+},500);
+
+}
+
+function openImg(src){
+
+document.getElementById("lightbox").style.display="flex";
+
+document.getElementById("preview").src=src;
+
+}
+
+function closeImg(){
+
+document.getElementById("lightbox").style.display="none";
+
+}
+
+function createHeart(){
+
+const heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.animationDuration=(Math.random()*3+3)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+
+heart.remove();
+
+},6000);
+
+}
+
+setInterval(createHeart,300);
+
+function createPetal(){
+
+const petal=document.createElement("div");
+
+petal.className="petal";
+
+petal.innerHTML="🌸";
+
+petal.style.left=Math.random()*100+"vw";
+
+petal.style.animationDuration=(Math.random()*5+5)+"s";
+
+document.body.appendChild(petal);
+
+setTimeout(()=>{
+
+petal.remove();
+
+},9000);
+
+}
+
+setInterval(createPetal,800);
+
+</script>
+
+</body>
+</html>

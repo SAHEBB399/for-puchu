@@ -1,0 +1,860 @@
+/* =====================================
+   FOR SREEJA ❤️
+   STYLE.CSS
+   PART 1
+=====================================*/
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+
+background:linear-gradient(
+135deg,
+#ffd6e8,
+#ffeef5,
+#fff6fb
+);
+
+min-height:100vh;
+
+overflow-x:hidden;
+
+color:#444;
+
+text-align:center;
+
+}
+
+/* HERO SECTION */
+
+.hero{
+
+width:90%;
+
+max-width:900px;
+
+margin:auto;
+
+padding:70px 25px;
+
+animation:fadeUp 1.2s ease;
+
+}
+
+/* TITLES */
+
+.title{
+
+font-size:58px;
+
+color:#ff1e74;
+
+font-weight:700;
+
+margin-bottom:25px;
+
+text-shadow:
+2px 2px 10px rgba(255,20,147,.2);
+
+animation:pop 1.2s;
+
+}
+
+/* SUBTITLE */
+
+.subtitle{
+
+font-size:22px;
+
+line-height:2;
+
+color:#555;
+
+margin-bottom:45px;
+
+animation:fadeIn 2s;
+
+}
+
+/* BUTTON AREA */
+
+.buttons{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:25px;
+
+flex-wrap:wrap;
+
+margin-top:35px;
+
+}
+
+/* MAIN BUTTON */
+
+.main-btn{
+
+padding:16px 36px;
+
+border:none;
+
+border-radius:50px;
+
+background:#ff4d88;
+
+color:white;
+
+font-size:20px;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.35s;
+
+box-shadow:
+0 10px 25px rgba(255,0,102,.25);
+
+}
+
+.main-btn:hover{
+
+transform:translateY(-4px) scale(1.05);
+
+background:#ff2169;
+
+}
+
+/* YES BUTTON */
+
+.yes-btn{
+
+padding:16px 36px;
+
+border:none;
+
+border-radius:50px;
+
+background:#ff4d88;
+
+color:white;
+
+font-size:20px;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.35s;
+
+box-shadow:
+0 10px 25px rgba(255,0,102,.25);
+
+}
+
+.yes-btn:hover{
+
+transform:translateY(-4px) scale(1.05);
+
+background:#ff2169;
+
+}
+
+/* NO BUTTON */
+
+.no-btn{
+
+padding:16px 36px;
+
+border:none;
+
+border-radius:50px;
+
+background:#d8d8d8;
+
+color:#333;
+
+font-size:20px;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.35s;
+
+}
+
+.no-btn:hover{
+
+background:#bbbbbb;
+
+}
+
+/* QUESTION BOX */
+
+.question-box{
+
+width:90%;
+
+max-width:900px;
+
+margin:auto;
+
+padding:80px 20px;
+
+animation:fadeUp 1.2s;
+
+}
+
+/* GALLERY */
+
+.gallery{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(230px,1fr));
+
+gap:25px;
+
+padding:40px;
+
+max-width:1200px;
+
+margin:auto;
+
+}
+
+.gallery img{
+
+width:100%;
+
+height:320px;
+
+object-fit:cover;
+
+border-radius:20px;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.15);
+
+transition:.4s;
+
+cursor:pointer;
+
+}
+
+.gallery img:hover{
+
+transform:scale(1.08);
+
+box-shadow:
+0 15px 40px rgba(255,0,100,.3);
+
+}
+
+/* FLOATING HEARTS */
+
+.heart{
+
+position:fixed;
+
+bottom:-50px;
+
+font-size:28px;
+
+pointer-events:none;
+
+animation:floatHeart linear forwards;
+
+opacity:.9;
+
+z-index:999;
+
+}
+
+@keyframes floatHeart{
+
+0%{
+
+transform:
+translateY(0)
+rotate(0deg);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:
+translateY(-120vh)
+rotate(360deg);
+
+opacity:0;
+
+}
+
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+
+}
+
+to{
+
+opacity:1;
+
+}
+
+}
+
+@keyframes pop{
+
+0%{
+
+transform:scale(.6);
+
+opacity:0;
+
+}
+
+100%{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+}
+/* =====================================
+   STYLE.CSS
+   PART 2
+=====================================*/
+
+/* GLASS CARD */
+
+.card{
+
+width:90%;
+
+max-width:900px;
+
+margin:40px auto;
+
+padding:40px;
+
+background:rgba(255,255,255,.35);
+
+backdrop-filter:blur(12px);
+
+border-radius:25px;
+
+box-shadow:0 15px 40px rgba(0,0,0,.12);
+
+animation:fadeUp 1s;
+
+}
+
+/* PARAGRAPHS */
+
+.card p,
+.hero p,
+.question-box p{
+
+font-size:22px;
+
+line-height:2;
+
+color:#555;
+
+margin-bottom:25px;
+
+}
+
+/* HEADINGS */
+
+h1{
+
+margin-bottom:25px;
+
+}
+
+h2{
+
+font-size:38px;
+
+color:#ff2f7b;
+
+margin-bottom:20px;
+
+}
+
+h3{
+
+font-size:28px;
+
+margin-bottom:15px;
+
+color:#ff4d88;
+
+}
+
+/* AUDIO */
+
+audio{
+
+display:none;
+
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#ffe7f2;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#ff5c99;
+
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:#ff2e73;
+
+}
+
+/* PHOTO HOVER EFFECT */
+
+.gallery img:hover{
+
+transform:scale(1.08) rotate(1deg);
+
+}
+
+/* IMAGE FADE */
+
+.gallery img{
+
+animation:imageFade 1s ease;
+
+}
+
+@keyframes imageFade{
+
+from{
+
+opacity:0;
+
+transform:scale(.8);
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+/* GLOWING BUTTONS */
+
+.main-btn,
+
+.yes-btn{
+
+animation:glow 2s infinite;
+
+}
+
+@keyframes glow{
+
+0%{
+
+box-shadow:0 0 10px rgba(255,0,100,.25);
+
+}
+
+50%{
+
+box-shadow:0 0 25px rgba(255,0,100,.55);
+
+}
+
+100%{
+
+box-shadow:0 0 10px rgba(255,0,100,.25);
+
+}
+
+}
+
+/* PAGE FADE */
+
+body{
+
+animation:pageFade .8s ease;
+
+}
+
+@keyframes pageFade{
+
+from{
+
+opacity:0;
+
+}
+
+to{
+
+opacity:1;
+
+}
+
+}
+
+/* TITLE EFFECT */
+
+.title{
+
+animation:titleMove 1.2s ease;
+
+}
+
+@keyframes titleMove{
+
+0%{
+
+transform:translateY(-40px);
+
+opacity:0;
+
+}
+
+100%{
+
+transform:translateY(0);
+
+opacity:1;
+
+}
+
+}
+
+/* TEXT ANIMATION */
+
+.subtitle{
+
+animation:textFade 2s;
+
+}
+
+@keyframes textFade{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* SHADOW */
+
+.hero,
+.question-box{
+
+filter:drop-shadow(0 10px 25px rgba(0,0,0,.08));
+
+}
+
+/* HEART BACKGROUND */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+background:
+
+radial-gradient(circle at 20% 20%,rgba(255,0,100,.06),transparent 20%),
+
+radial-gradient(circle at 80% 30%,rgba(255,0,100,.06),transparent 20%),
+
+radial-gradient(circle at 50% 80%,rgba(255,0,100,.05),transparent 20%);
+
+pointer-events:none;
+
+z-index:-1;
+
+}
+/* =====================================
+   STYLE.CSS
+   PART 3 (FINAL)
+=====================================*/
+
+/* LINK */
+
+a{
+
+text-decoration:none;
+
+color:inherit;
+
+}
+
+/* SPACING */
+
+section{
+
+padding:80px 20px;
+
+}
+
+/* FADE DELAY */
+
+.fade-delay{
+
+animation:fadeIn 2s ease;
+
+}
+
+/* SMALL HEARTS */
+
+.small-heart{
+
+font-size:18px;
+
+opacity:.7;
+
+animation:floatHeart 5s linear infinite;
+
+}
+
+/* GALLERY BORDER */
+
+.gallery img{
+
+border:6px solid white;
+
+}
+
+/* BUTTON ACTIVE */
+
+.main-btn:active,
+.yes-btn:active,
+.no-btn:active{
+
+transform:scale(.96);
+
+}
+
+/* IMAGE SHADOW */
+
+.gallery img{
+
+box-shadow:
+
+0 15px 35px rgba(255,0,100,.15);
+
+}
+
+/* HERO WIDTH */
+
+.hero{
+
+max-width:900px;
+
+}
+
+/* QUESTION WIDTH */
+
+.question-box{
+
+max-width:900px;
+
+}
+
+/* TEXT SELECTION */
+
+::selection{
+
+background:#ff4d88;
+
+color:white;
+
+}
+
+/* FOOTER */
+
+.footer{
+
+margin-top:50px;
+
+padding:20px;
+
+font-size:15px;
+
+color:#777;
+
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.hero,
+.question-box{
+
+padding:40px 20px;
+
+}
+
+.title{
+
+font-size:42px;
+
+}
+
+.subtitle{
+
+font-size:18px;
+
+line-height:1.8;
+
+}
+
+.gallery{
+
+grid-template-columns:1fr;
+
+padding:20px;
+
+}
+
+.gallery img{
+
+height:auto;
+
+}
+
+.buttons{
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+.main-btn,
+.yes-btn,
+.no-btn{
+
+width:90%;
+
+font-size:18px;
+
+}
+
+}
+
+/* VERY SMALL DEVICES */
+
+@media(max-width:480px){
+
+.title{
+
+font-size:34px;
+
+}
+
+.subtitle{
+
+font-size:16px;
+
+}
+
+.main-btn,
+.yes-btn,
+.no-btn{
+
+padding:14px 24px;
+
+font-size:17px;
+
+}
+
+}
+
+/* END */

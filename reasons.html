@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Why You're So Special ❤️</title>
+
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<audio id="bgMusic" autoplay loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<section class="hero">
+
+<h1 id="typing"></h1>
+
+<div class="card">
+
+<p>
+
+There isn't just one reason...
+
+There are hundreds.
+
+But here are a few that always come to my mind.
+
+❤️
+
+</p>
+
+<ul style="text-align:left;max-width:700px;margin:auto;font-size:20px;line-height:2;">
+
+<li>❤️ Your beautiful smile.</li>
+
+<li>❤️ Your caring nature.</li>
+
+<li>❤️ The kindness you show everyone.</li>
+
+<li>❤️ Your sweet personality.</li>
+
+<li>❤️ The happiness you spread.</li>
+
+<li>❤️ The way you make ordinary moments feel special.</li>
+
+<li>❤️ Your honesty.</li>
+
+<li>❤️ Your confidence.</li>
+
+<li>❤️ Your positive energy.</li>
+
+<li>❤️ Your cute expressions.</li>
+
+<li>❤️ The memories we've shared.</li>
+
+<li>❤️ Your laugh that can brighten a day.</li>
+
+<li>❤️ The comfort I feel when talking to you.</li>
+
+<li>❤️ Your uniqueness.</li>
+
+<li>❤️ The way you inspire people.</li>
+
+<li>❤️ Your beautiful heart.</li>
+
+<li>❤️ Your patience.</li>
+
+<li>❤️ Your respect for others.</li>
+
+<li>❤️ Simply because you're YOU.</li>
+
+<li>❤️ And that's more than enough.</li>
+
+</ul>
+
+<p style="margin-top:40px;">
+
+Maybe you never noticed these things.
+
+But they're exactly what make you so special.
+
+😊❤️
+
+</p>
+
+</div>
+
+<button class="main-btn" onclick="nextPage()">
+
+Continue ❤️
+
+</button>
+
+</section>
+
+<script>
+
+const text="20 Reasons Why You're Amazing ❤️";
+
+let i=0;
+
+function typeWriter(){
+
+if(i<text.length){
+
+document.getElementById("typing").innerHTML+=text.charAt(i);
+
+i++;
+
+setTimeout(typeWriter,80);
+
+}
+
+}
+
+typeWriter();
+
+const music=document.getElementById("bgMusic");
+
+document.body.addEventListener("click",()=>{
+
+music.play();
+
+},{once:true});
+
+function nextPage(){
+
+document.body.style.opacity="0";
+
+setTimeout(()=>{
+
+window.location="memories.html";
+
+},500);
+
+}
+
+function createHeart(){
+
+const heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.animationDuration=(Math.random()*3+3)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+
+heart.remove();
+
+},6000);
+
+}
+
+setInterval(createHeart,300);
+
+function createPetal(){
+
+const petal=document.createElement("div");
+
+petal.className="petal";
+
+petal.innerHTML="🌸";
+
+petal.style.left=Math.random()*100+"vw";
+
+petal.style.animationDuration=(Math.random()*5+5)+"s";
+
+document.body.appendChild(petal);
+
+setTimeout(()=>{
+
+petal.remove();
+
+},9000);
+
+}
+
+setInterval(createPetal,800);
+
+</script>
+
+</body>
+</html>

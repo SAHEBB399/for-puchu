@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>A Letter For You ❤️</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<audio id="bgMusic" autoplay loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<section class="hero">
+
+<h1 id="typing"></h1>
+
+<div class="card">
+
+<p>
+
+Dear Sreeja,
+
+<br><br>
+
+Before anything else...
+
+thank you for taking the time to read everything until this point.
+
+That alone means more than you probably realize.
+
+<br><br>
+
+When I started making this website,
+
+I wasn't trying to create something perfect.
+
+I simply wanted to create something that would make you smile.
+
+<br><br>
+
+Life moves very fast.
+
+People meet,
+
+people change,
+
+and sometimes people drift apart.
+
+That's why I believe we should appreciate the wonderful people around us whenever we have the chance.
+
+<br><br>
+
+You are one of those wonderful people.
+
+Your kindness,
+
+your smile,
+
+your personality,
+
+and the positivity you bring are things that deserve appreciation.
+
+<br><br>
+
+Maybe we've only shared ordinary conversations.
+
+Maybe we've laughed over simple things.
+
+Maybe we've talked only for a few moments.
+
+But sometimes those small moments become the most meaningful memories.
+
+<br><br>
+
+This website isn't about expensive gifts.
+
+It isn't about impressing anyone.
+
+It's simply a collection of thoughts,
+
+memories,
+
+gratitude,
+
+and appreciation.
+
+<br><br>
+
+If this little surprise made you smile,
+
+then every minute spent creating it was completely worth it.
+
+<br><br>
+
+Thank you for being yourself.
+
+Never stop smiling.
+
+Never stop believing in yourself.
+
+Never let anyone make you forget how amazing you are.
+
+<br><br>
+
+No matter where life takes us,
+
+I genuinely hope you achieve every dream you've ever wished for.
+
+I hope happiness always finds you.
+
+I hope your future is filled with success,
+
+peace,
+
+good health,
+
+and countless reasons to smile.
+
+<br><br>
+
+Some people leave memories.
+
+Some people leave inspiration.
+
+You have left both.
+
+<br><br>
+
+Thank you,
+
+Sreeja.
+
+❤️
+
+</p>
+
+</div>
+
+<div class="buttons">
+
+<button class="main-btn" onclick="nextPage()">
+
+View Our Gallery 📸
+
+</button>
+
+</div>
+
+</section>
+
+<script>
+
+const text="A Letter From My Heart ❤️";
+
+let i=0;
+
+function typeWriter(){
+
+if(i<text.length){
+
+document.getElementById("typing").innerHTML+=text.charAt(i);
+
+i++;
+
+setTimeout(typeWriter,80);
+
+}
+
+}
+
+typeWriter();
+
+const music=document.getElementById("bgMusic");
+
+document.body.addEventListener("click",()=>{
+
+music.play();
+
+},{once:true});
+
+function nextPage(){
+
+document.body.style.opacity="0";
+
+setTimeout(()=>{
+
+window.location="gallery.html";
+
+},500);
+
+}
+
+function createHeart(){
+
+const heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.animationDuration=(Math.random()*3+3)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+
+heart.remove();
+
+},6000);
+
+}
+
+setInterval(createHeart,300);
+
+function createPetal(){
+
+const petal=document.createElement("div");
+
+petal.className="petal";
+
+petal.innerHTML="🌸";
+
+petal.style.left=Math.random()*100+"vw";
+
+petal.style.animationDuration=(Math.random()*5+5)+"s";
+
+document.body.appendChild(petal);
+
+setTimeout(()=>{
+
+petal.remove();
+
+},9000);
+
+}
+
+setInterval(createPetal,800);
+
+</script>
+
+</body>
+</html>
